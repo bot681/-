@@ -188,7 +188,7 @@
     function showQuiz() {
       const qBox = document.getElementById('quiz-box');
       const qData = quizData[quizIndex];
-      qBox.innerHTML = <h3>${quizIndex + 1}. ${qData.q}</h3>;
+      qBox.innerHTML = `<h3>${quizIndex + 1}. ${qData.q}</h3>`;
       qData.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
@@ -197,7 +197,7 @@
         qBox.appendChild(btn);
       });
       qBox.style.display = 'block';
-      document.getElementById('quiz-status').innerText = 문제 ${quizIndex + 1} / ${quizData.length};
+      document.getElementById('quiz-status').innerText = `문제 ${quizIndex + 1} / ${quizData.length}`;
     }
 
     function checkAnswer(selected) {
@@ -213,7 +213,7 @@
       } else {
         document.getElementById('quiz-box').style.display = 'none';
         document.getElementById('quiz-status').innerText = '';
-        document.getElementById('quiz-result').innerText = 총 ${quizData.length}문제 중 ${correctCount}문제 맞췄습니다!;
+        document.getElementById('quiz-result').innerText = `총 ${quizData.length}문제 중 ${correctCount}문제 맞췄습니다!`;
       }
     }
 
@@ -252,7 +252,7 @@
 
     function showScenario() {
       const box = document.getElementById('scenario-box');
-      box.innerHTML = <h3>${scenarioData[currentScenario].question}</h3>;
+      box.innerHTML = `<h3>${scenarioData[currentScenario].question}</h3>`;
       scenarioData[currentScenario].options.forEach(opt => {
         const btn = document.createElement('button');
         btn.className = 'choice-btn';
